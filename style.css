@@ -1,0 +1,79 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+
+header{
+  width: 100%;
+  height: 50px;
+  background-color: mediumblue;
+}
+
+.container{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 50vh;
+}
+
+.container-prev{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 40%;
+  height: 50vh;
+}
+
+.prev{
+  width: 90%;
+  height: 40vh;
+
+  border: solid 2px grey;
+}
+
+.enviar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 90%;
+  height: 4vh;
+  padding: 18px;
+
+  cursor: pointer;
+
+  background: transparent;
+  border: solid 2px grey;
+}
+
+.container-arquivo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  height: 50vh;
+}
+
+.url{
+  padding: 1rem;
+  width: 100%;
+  height: 4vh;
+  border: solid 2px grey;
+  outline: none;
+}
+
+.arquivo{
+  width: 100%;
+}
+
+.barra{
+  margin-top: 20px;
+  width: 100%;
+  height: 3px;
+  background-color: black;
+}
