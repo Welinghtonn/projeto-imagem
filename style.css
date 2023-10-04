@@ -5,6 +5,13 @@
 
 }
 
+body{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
 header{
   width: 100%;
   height: 50px;
@@ -15,9 +22,17 @@ header{
   margin-top: 20px;
   display: flex;
   justify-content: space-around;
-  width: 100%;
+  width: 950px;
   height: 50vh;
 }
+
+@media screen and (max-width: 905px) {
+  .container{
+    width: 100%;
+  }
+}
+
+
 
 .container-prev{
   display: flex;
@@ -76,4 +91,29 @@ header{
   width: 100%;
   height: 3px;
   background-color: black;
+}
+
+.card-foto{
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.containerr{
+  width: 100%;
+}
+
+@media screen and (max-width: 650px){
+  .container-prev{
+    height: 40vh;
+  }
+
+  .prev{
+    height: 30vh;
+  }
+
+  .container-arquivo{
+    height: 40vh;
+  }
 }
