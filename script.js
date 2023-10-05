@@ -1,56 +1,47 @@
 var array = []
+var id = 0;
+var preview
 
-document.getElementById("url").addEventListener("keypress", function(event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    Enviarr();
+const prev = document.querySelector("#prev");
+const input = document.getElementById("url");
+const galeria = document.querySelector(".container-fotos")
+
+function Submit() {
+  if(preview){
+    render();
   }
-});
-
-function Enviar(){
-  console.log(array)
-  oiii()
 }
 
-function oiii() {
+input.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && input.value != "") {
+    preview = input.value;
+
+    input.value = "";
+    showPreview();
+  }
+})
+
+function render() {
+  galeria.innerHTML = "";
+
+  array.push({
+    id: id,
+    foto: preview
+  })
   array.forEach((item) => {
-    console.log(array);
     let container = document.createElement("img");
 
     container.className = "containerr";
     container.src = item.foto;
 
-    document.body.appendChild(container);
-  })}
-
-function Enviarr() {
-  var input = document.getElementById("url");
-
-  if (input.value === "") {
-    return;
-  } else {
-    let item = {
-      id: crypto.randomUUID(),
-      foto: input.value
-    };
-
-    document.getElementById("url").value = "";
-    array.push(item);
-    oii();
-  }
+    galeria.appendChild(container);
+  })
 }
 
-function oii() {
-  array.forEach((item) => {
-    console.log(array);
-    let img = document.createElement("img");
-
-    img.className = "card-foto";
-    img.src = item.foto;
-
-    let prev = document.getElementById("prev");
-    prev.innerHTML = ""; 
-    prev.appendChild(img);
-
-  });
+function showPreview() {
+  prev.innerHTML = ""
+  let img = document.createElement("img");
+  img.className = "card-foto"
+  img.src = preview;
+  prev.appendChild(img)
 }
