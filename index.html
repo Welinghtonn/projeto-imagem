@@ -9,24 +9,35 @@
 	</head>
 
 	<body>
-		<header></header>
+		<header>
+			<h1>Galery Welton</h1>
+		</header>
 		<div class="container">
 			<div class="container-prev">
 				<div id="prev" class="prev"></div>
 				<button onclick="Submit()" class="enviar">Enviar</button>
 			</div>
 			<div class="container-arquivo">
-				<input
+				<div class="suffix">
+					<ion-icon name="image-sharp"></ion-icon>
+					<input
+					required
 					placeholder="Insira uma url de imagem"
 					class="url"
 					id="url"
 					type="text"
-				/>
-				<input class="arquivo" type="file" name="" id="" />
+					/>
+				</div>
+				<div class="suffix">
+					<ion-icon name="document-sharp"></ion-icon>
+					<input class="arquivo" type="file" name="" id="file" />
+				</div>
 			</div>
 		</div>
 		<div class="barra"></div>
 		<div class="container-fotos"></div>
 	</body>
 	<script src="script.js"></script>
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </html>

@@ -4,6 +4,7 @@ var preview
 
 const prev = document.querySelector("#prev");
 const input = document.getElementById("url");
+const file = document.getElementById("file");
 const galeria = document.querySelector(".container-fotos")
 
 function Submit() {
@@ -21,6 +22,16 @@ input.addEventListener("keydown", (e) => {
   }
 })
 
+file.addEventListener("change", (e) => {
+  if (e.target.files.length > 0) {
+    const file = e.target.files[0];
+    const fileURL = URL.createObjectURL(file);
+
+    preview = fileURL;
+    showPreview();
+  }
+});
+
 function render() {
   galeria.innerHTML = "";
 
@@ -29,6 +40,7 @@ function render() {
     foto: preview
   })
   array.forEach((item) => {
+    console.log(array)
     let container = document.createElement("img");
 
     container.className = "containerr";
